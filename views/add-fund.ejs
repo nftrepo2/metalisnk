@@ -878,27 +878,31 @@
     <!-- Favicon -->
     <!-- CSS 
     ============================================ -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.png">
     <!-- CSS 
     ============================================ -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js" ></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/vendor/slick.css">
-    <link rel="stylesheet" href="assets/css/vendor/slick-theme.css">
-    <link rel="stylesheet" href="assets/css/vendor/nice-select.css">
-    <link rel="stylesheet" href="assets/css/plugins/feature.css">
-    <link rel="stylesheet" href="assets/css/plugins/jquery-ui.min.css">
-    <link rel="stylesheet" href="assets/css/vendor/odometer.css">
+    <link rel="stylesheet" href="/assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/vendor/slick.css">
+    <link rel="stylesheet" href="/assets/css/vendor/slick-theme.css">
+    <link rel="stylesheet" href="/assets/css/vendor/nice-select.css">
+    <link rel="stylesheet" href="/assets/css/plugins/feature.css">
+    <link rel="stylesheet" href="/assets/css/plugins/jquery-ui.min.css">
+    <link rel="stylesheet" href="/assets/css/vendor/odometer.css">
 
     <!-- Style css -->
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+
+    
     
 
 
@@ -919,41 +923,25 @@
                             <!-- Start Mainmanu Nav -->
                             <ul id="mainmenu_list" class="mainmenu mainmenu_list">
                                 <li class="">
-                                    <a href="/mynfts/<%=user._id%>">My NFTs</a>
+                                    <a href="/adminRoute">Dashboard</a>
 
                                 </li>
                                 <li class="">
-                                    <a href="/bids">Bids</a>
+                                    <a href="/allFunding">All Deposits</a>
 
                                 </li>
-                                <!--<li class="">
-                                <a href="activity">My Activities</a>
-
-                            </li>-->
-                                <!--<li class="">
-                                <a href="requests">Buy Requests</a>
-
-                            </li>-->
+                                
                                 <li class="">
-                                    <a href="/dashboard">Explore</a>
+                                    <a href="/allWidthdrawals">all Widthdrawals</a>
 
                                 </li>
-                                <!--<li class="">
-                                <a href="author">Profile</a>
-
-                            </li>-->
-                                <!--<li class="">
-                                <a href="deposits">Deposits</a>
-
-                            </li>-->
+                                
                                 <li class="">
-                                    <a href="/withdrawals/<%=user._id%>">Withdrawals</a>
+                                    <a href="allPlans">All system nfts</a>
 
                                 </li>
-                                <li class="">
-                                    <a href="/profile">Profile</a>
-
-                                </li>
+                            
+                               
                                 <li class="">
                                     <a href="/logout">Log out</a>
 
@@ -964,7 +952,7 @@
                     </div>
                 </div>
                 <div class="header-right">
-                    <div class="setting-option d-none d-lg-block">
+                    <!-- <div class="setting-option d-none d-lg-block">
                         <form action="/search" class="search-form-wrapper" method="post">
                             <input style="border-radius:3px;" type="search" placeholder="Search" aria-label="Search"
                                 name="searchTerm" required="" id="searchTerm" autocomplete="off">
@@ -973,12 +961,13 @@
                             </div>
                             <div id="output" style="background: transparent; color: red;"></div>
                         </form>
-                    </div>
+                    </div> -->
 
                     <div style="margin-left:10px;"><a style="color: grey; text-decoration: underline;"
-                            href="/add-fund"><b>Add Fund</b></a></div>
+                            href="#"><b>all Bids</b></a></div>
                     &nbsp;&nbsp;&nbsp;
-                    <div>Balance: <b style="color: green"><%=user.balance%>.00  <%=user.currency%></b></div>
+                    <div style="margin-left:10px;"><a style="color: grey; text-decoration: underline;"
+                        href="#"><b>all user nft</b></a></div>
 
                     <div style="margin-left: 10px;" class="setting-option mobile-menu-bar d-block d-xl-none">
                         <div class="hamberger">
@@ -988,80 +977,13 @@
                         </div>
                     </div>
 
-                    <!--<div id="my_switcher" class="my_switcher setting-option">
-                    <ul>
-                        <li>
-                            <a href="javascript: void(0);" data-theme="light" class="setColor light">
-                                <img class="sun-image" src="./mynfts_files/sun-01.svg" alt="Sun images">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript: void(0);" data-theme="dark" class="setColor dark">
-                                <img class="Victor Image" src="./mynfts_files/vector.svg" alt="Vector Images">
-                            </a>
-                        </li>
-                    </ul>
-                </div>-->
+                   
                 </div>
             </div>
         </div>
     </header>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $("#username").on('keyup input', function () {
-                var query = $(this).val();
-                if (query != "") {
-                    $.ajax({
-                        url: 'includes/user-search.php',
-                        method: 'POST',
-                        data: { query: query },
-                        success: function (data) {
-
-                            $('#output').html(data);
-                            $('#output').css('display', 'block');
-
-                            // $("#username").focusout(function(){
-                            //     $('#output').css('display', 'none');
-                            // });
-                            $("#username").focusin(function () {
-                                $('#output').css('display', 'block');
-                            });
-                        }
-                    });
-                } else {
-                    $('#output').css('display', 'none');
-                }
-            });
-            // });
-
-            // $(document).ready(function(){
-
-            $("#username1").on('keyup input', function () {
-
-                var query = $(this).val();
-                if (query != "") {
-                    $.ajax({
-                        url: 'includes/user-search.php',
-                        method: 'POST',
-                        data: { query: query },
-                        success: function (data) {
-
-                            $('#output1').html(data);
-                            $('#output1').css('display', 'block');
-
-                            // $("#username").focusout(function(){
-                            //     $('#output').css('display', 'none');
-                            // });
-                            $("#username1").focusin(function () {
-                                $('#output1').css('display', 'block');
-                            });
-                        }
-                    });
-                } else {
-                    $('#output1').css('display', 'none');
-                }
-            });
-        });
+        
+<script>
         
         // Mobile Side Nav Toggle
         const hambergerButton = document.querySelector(".hamberger-button");
@@ -1179,59 +1101,135 @@
     <!-- Start product area -->
 <br>
 <div>
+
     <div class="container">
 
-        <% if(infoSubmitObj != '') { %>
-    <div class="col-8 alert alert-success" role="alert">
-      <%= infoSubmitObj %>
+
+        <div class="d-flex justify-content-between flex-wrap flex-md nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2 text-gray">Editing:  <%=user.fullname%> </h1>
+    <div class="btn-toolbar mb-2 mb-md 0">
     </div>
-  <% } %>
-
-  <% if(infoErrorsObj != '') { %>
-    <div class="col-8 alert alert-danger" role="alert">
-      <%= infoErrorsObj[0].message %>
+  </div>
+  
+  <div class="col py-3">
+    <div class="row">
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item active"> <%=user.firstname%> </li>
+          </ol>
+        </nav>
+      </div>
+      <div class="col text-end fw-lighter">
+        <!-- <b>Last Updated:</b> -->
+        <b>UserId:</b> <%=user._id%>
+      </div>
     </div>
-  <% } %>
-
-<div class="row" style="margin-top: 40px;">
-    <div class="col-md-5 offset-md-2 col-sm-12">
-        <center><img src="ethereum-6842405_640.webp" style="width:300px; height:300px; margin-left: auto; margin-right: auto;"></center><br>
-        <div>
-            <div style="border:1px solid lightgrey; text-align:center; border-radius:3px; padding:5px;">
-            	<input readonly type="" id="myInput" value="0x2CCD05252F71Abb0e9c215B47421ca1f8260ac82" name="">
-            </div>
-            <button style="width:60px; font-size:small; font-weight:bold; padding:5px;" id="copy_btn">COPY</button></div>
-
-            <script type="text/javascript">
-            	var copy_btn = document.getElementById('copy_btn')
-            	function myFunction() {
-                    var copyText = document.getElementById("myInput");
-                    copyText.select();
-                    copyText.setSelectionRange(0, 99999);
-                    navigator.clipboard.writeText(copyText.value);
-                    swal("Wallet Address Copied", copyText.value, "info");
-                  }
-
-                  copy_btn.addEventListener('click', function () {
-                    myFunction()
-                  })
-            </script>
+  
+  </div>
+  
+  
+  <form action="/editUser/<%=user._id%>?_method=PUT" method="POST">
+  
+    <div class="row form-group mb-4">
+      <div class="col">
+        <label for="fullname">First Name</label>
+        <input type="text" class="form-control" id="firstname" name="firstname" value=" <%=user.firstname%> " placeholder="First Name" readonly required>
+      </div>
+  
+      
+      <div class="col">
+        <label for="text">Last Name</label>
+        <input type="text" class="form-control" id="lastname" name="lastname" value=" <%=user.lastname%> " placeholder="lastname" readonly required>
+      </div>
+      <div class="row form-group mb-4">
+     
+      
+      <div class="col">
+        <label for="balance">Bids</label>
+        <input type="text" class="form-control" id="bid" name="bid" value=" <%=user.bid%> " placeholder="bid" required>
+      </div>
+  
     </div>
-    
-    <div class="col-md-4 col-sm-12">
-        <div style=" margin:1em;">
-            <p>Kindly submit amount deposited after payment for faster verification: </p>
-            <form action="/deposit/<%=user._id%>" method="post" enctype="multipart/form-data">
-                <input type="number" name="amount" id="amount"  placeholder="Amount(ETH)" style="background-color: white; height: 40px; width: 150px; border-radius: 5px; margin-bottom: 40px;" required=""> 
-                <label>Upload Payment Proof:
-                    <input name="image" id="image" type="file" style=" border-radius: 3px; margin-top:7px;">
-                </label>
-                <button type="submit"  style="margin-top: 20px; height:40px; width: 80px; background: #00a3ff; border-radius: 3px; color: white">Submit</button>
-            </form>
+  
+    </div>
+  
+  
+    <div class="row form-group mb-4">
+      <div class="col">
+        <label for="currency">Currency </label>
+        <input type="text" class="form-control" id="currency" name="currency" value=" <%=user.currency%> " placeholder="currency" required>
+      </div>
+  
+      <div class="col">
+        <label for="bonus">Balance </label>
+        <input type="number" class="form-control" id="balance" name="balance" value=" <%=user.balance%>" placeholder="balance" required>
+      </div>
+  
+    </div>
+      
+    <div class="row form-group mb-4">
+      <div class="col">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" name="email" value="<%=user.email%>" placeholder="Email" readonly required>
+      </div>
+      <div class="col">
+        <label for="email">Mint Fee</label>
+        <input type="text" class="form-control" id="mintFee" name="mintFee" value="<%=user.mintFee%>" placeholder="mintFee">
+      </div>
+    </div>
+
+    <div class="row form-group mb-4">
+      <div class="col">
+        <label for="email">Wallet</label>
+        <input type="text" class="form-control" id="wallet" name="wallet" value="<%=user.wallet%>" placeholder="wallet"  >
+      </div>
+      <div class="col">
+        <label for="email">Password</label>
+        <input type="password" class="form-control" id="password" name="password" value="<%=user.password%>" placeholder="password">
+      </div>
+    </div>
+
+  
+  
+  
+    <div class="form-group mb-4">
+      <button type="submit" class="btn btn-primary">Update User</button>
+  
+      <button type="button" class="btn btn-danger" data-bs-toggle="modal" id="deleteButton" data-bs-target="#deleteModal">Delete User</button>
+  
+    </div>
+  
+  </form>
+  
+  </section>
+  
+  
+  <div class="modal fade" tabindex="-1" role="dialog" id="deleteModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-title">You are about to remove a user record.</div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        <div class="modal-body">
+          <p>
+            This will remove the User record of <b class="fw-bold"> <%=user.firstname%> </b><br/>
+            Are you sure?
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <form action="/deleteUser/<%=user._id%> ?_method=DELETE" method="POST" class="position-relative">
+            <button type="submit" class="btn btn-primary">Yes, Remove User</button>
+          </form>
+        </div>
+      </div>
     </div>
-</div>
-
+  </div>
+  
+ 
+                            
 
 
 
@@ -1264,30 +1262,30 @@
     </div>
 <!-- End Top To Bottom Area  -->
     <!-- JS ============================================ -->
-    <script src="assets/js/vendor/jquery.js"></script>
-    <script src="assets/js/vendor/jquery.nice-select.min.js"></script>
-    <script src="assets/js/vendor/jquery-ui.js"></script>
-    <script src="assets/js/vendor/modernizer.min.js"></script>
-    <script src="assets/js/vendor/feather.min.js"></script>
-    <script src="assets/js/vendor/slick.min.js"></script>
-    <script src="assets/js/vendor/bootstrap.min.js"></script>
-    <script src="assets/js/vendor/sal.min.js"></script>
-    <script src="assets/js/vendor/particles.js"></script>
-    <script src="assets/js/vendor/jquery.style.swicher.js"></script>
-    <script src="assets/js/vendor/js.cookie.js"></script>
-    <script src="assets/js/vendor/count-down.js"></script>
-    <script src="assets/js/vendor/isotop.js"></script>
-    <script src="assets/js/vendor/imageloaded.js"></script>
-    <script src="assets/js/vendor/backtoTop.js"></script>
-    <script src="assets/js/vendor/odometer.js"></script>
-    <script src="assets/js/vendor/jquery-appear.js"></script>
-    <script src="assets/js/vendor/scrolltrigger.js"></script>
-    <script src="assets/js/vendor/jquery.custom-file-input.js"></script>
-    <script src="assets/js/vendor/savePopup.js"></script>
-    <script src="assets/js/vendor/vanilla.tilt.js"></script>
+    <script src="/assets/js/vendor/jquery.js"></script>
+    <script src="/assets/js/vendor/jquery.nice-select.min.js"></script>
+    <script src="/assets/js/vendor/jquery-ui.js"></script>
+    <script src="/assets/js/vendor/modernizer.min.js"></script>
+    <script src="/assets/js/vendor/feather.min.js"></script>
+    <script src="/assets/js/vendor/slick.min.js"></script>
+    <script src="/assets/js/vendor/bootstrap.min.js"></script>
+    <script src="/assets/js/vendor/sal.min.js"></script>
+    <script src="/assets/js/vendor/particles.js"></script>
+    <script src="/assets/js/vendor/jquery.style.swicher.js"></script>
+    <script src="/assets/js/vendor/js.cookie.js"></script>
+    <script src="/assets/js/vendor/count-down.js"></script>
+    <script src="/assets/js/vendor/isotop.js"></script>
+    <script src="/assets/js/vendor/imageloaded.js"></script>
+    <script src="/assets/js/vendor/backtoTop.js"></script>
+    <script src="/assets/js/vendor/odometer.js"></script>
+    <script src="/assets/js/vendor/jquery-appear.js"></script>
+    <script src="/assets/js/vendor/scrolltrigger.js"></script>
+    <script src="/assets/js/vendor/jquery.custom-file-input.js"></script>
+    <script src="/assets/js/vendor/savePopup.js"></script>
+    <script src="/assets/js/vendor/vanilla.tilt.js"></script>
 
     <!-- main JS -->
-    <script src="assets/js/main.js"></script>
+    <script src="/assets/js/main.js"></script>
 
 
 </body>
