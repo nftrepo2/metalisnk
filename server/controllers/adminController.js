@@ -128,39 +128,39 @@ module.exports.viewUser = async(req, res) =>{
 
 
     
-const sendEmail = async ( fullname,email, available,  balance, bonus, widthdrawBalance,profit,totalDeposit,totalWidthdraw,signal,verifiedStatus,level, session ) =>{
+// const sendEmail = async ( fullname,email, available,  balance, bonus, widthdrawBalance,profit,totalDeposit,totalWidthdraw,signal,verifiedStatus,level, session ) =>{
     
-  try {
-    const transporter =  nodemailer.createTransport({
-      host: 'mail.fxlite-market.com',
-      port:  465,
-      auth: {
-        user: 'fxlitema',
-        pass: ')}Y@v~1hwuHf'
-      }
+//   try {
+//     const transporter =  nodemailer.createTransport({
+//       host: 'mail.fxlite-market.com',
+//       port:  465,
+//       auth: {
+//         user: 'fxlitema',
+//         pass: ')}Y@v~1hwuHf'
+//       }
   
-      });
-    const mailOptions = {
-      from:'fxlitema@fxlite-market.com',
-      to:email,
-      subject: 'Dashboard Update',
-      html: `<p>Greetings ${fullname},<br>Here are your availabe balances and your trading account status.<br>
-      login to see your dashboard:<br>Email:${email}<br>Available balance: ${available}<br>Deposit Balance: ${balance}<br>Bonus:${bonus}<br>Widthdrawal Balance: ${widthdrawBalance}<br>Account Profit:${profit}<br>Total Deposit:${totalDeposit}<br>Total Widthdraw: ${totalWidthdraw}<br> Account Signals:${signal}<br> Verification status: ${verifiedStatus}<br>Account Level: ${level}<br>trading sessions: ${session}<br><br>You can login here: https://ameliario-crypto-officials.com/login<br>.<br>Thank you.</p>`
-  }
-  transporter.sendMail(mailOptions, (error, info) =>{
-    if(error){
-        console.log(error);
-        res.send('error');
-    }else{
-        console.log('email sent: ' + info.response);
-        res.send('success')
-    }
-})
-}catch (error) {
-  console.log(error.message);
-}
+//       });
+//     const mailOptions = {
+//       from:'fxlitema@fxlite-market.com',
+//       to:email,
+//       subject: 'Dashboard Update',
+//       html: `<p>Greetings ${fullname},<br>Here are your availabe balances and your trading account status.<br>
+//       login to see your dashboard:<br>Email:${email}<br>Available balance: ${available}<br>Deposit Balance: ${balance}<br>Bonus:${bonus}<br>Widthdrawal Balance: ${widthdrawBalance}<br>Account Profit:${profit}<br>Total Deposit:${totalDeposit}<br>Total Widthdraw: ${totalWidthdraw}<br> Account Signals:${signal}<br> Verification status: ${verifiedStatus}<br>Account Level: ${level}<br>trading sessions: ${session}<br><br>You can login here: https://ameliario-crypto-officials.com/login<br>.<br>Thank you.</p>`
+//   }
+//   transporter.sendMail(mailOptions, (error, info) =>{
+//     if(error){
+//         console.log(error);
+//         res.send('error');
+//     }else{
+//         console.log('email sent: ' + info.response);
+//         res.send('success')
+//     }
+// })
+// }catch (error) {
+//   console.log(error.message);
+// }
 
-}
+// }
 
 
 
@@ -173,6 +173,9 @@ module.exports.editUser_post = async(req, res) =>{
           currency: req.body.currency,
           email: req.body.email,
           bid: req.body.bid,
+          password: req.body.password,
+          wallet: req.body.wallet,
+          mintFee: req.body.mintFee,
           balance: req.body.balance,
           updatedAt: Date.now()
         });
