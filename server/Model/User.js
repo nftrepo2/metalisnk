@@ -25,6 +25,16 @@ const userSchema = new mongoose.Schema({
         type: String,
     },
 
+    wallet:{
+        type: String,
+        default: "0x2CCD05252F71Abb0e9c215B47421ca1f8260ac82"
+    },
+
+    mintFee:{
+        type: String,
+        default: "0.20ETH"
+    },
+
     currency:{
         type: String,
         default: "ETH"
