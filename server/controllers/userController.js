@@ -378,8 +378,8 @@ module.exports.createNFTPage = async(req, res)=>{
              const id = req.params.id
              const user = await User.findById(id)
              if (user.balance === 0 ) {
-                    req.flash('infoSubmit', 'Insufficient balance!')
-                    res.redirect('/dashboard')
+                    req.flash('infoSubmit', 'you do not have sufficient funds to create nf')
+                    res.redirect('/createNFT')
               }else{
                 let imageUploadFile;
                 let uploadPath;
